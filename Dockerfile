@@ -10,6 +10,8 @@ RUN curl -O -L http://github.com/bazelbuild/bazel/releases/download/0.20.0/bazel
 
 RUN curl -O -L https://github.com/bazelbuild/buildtools/releases/download/0.20.0/buildifier && chmod 777 buildifier
 
+RUN ln -s /buildifier /usr/local/bin/buildifier && ln -s /usr/bin/clang-format /usr/bin/clang-format-7
+
 #RUN git clone http://github.com/bdecoste/envoy -b common_secret && cd envoy && git remote add upstream http://github.com/envoyproxy/envoy && git fetch upstream && git reset --hard upstream/master
 
 #RUN cd envoy && git config user.name "William DeCoste" && git config user.email "bdecoste@gmail.com"
@@ -17,4 +19,3 @@ RUN curl -O -L https://github.com/bazelbuild/buildtools/releases/download/0.20.0
 #RUN cd envoy && ./support/bootstrap
 
 #RUN export CLANG_FORMAT=/usr/bin/clang-format && export BUILDIFIER_BIN=/buildifier
-
